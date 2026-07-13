@@ -1,6 +1,6 @@
 {
     "name": "@dloizides/i18n",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tiny, dependency-free i18n runtime for React / React Native (RN-web) apps — locale detection, persisted choice, per-key English fallback, positional AND named interpolation, and a themable LanguageSwitcher. Its translate function matches the @dloizides UI-kit's `t` contract, so dropping it into UiProvider localizes every shared component for free. Part of the dloizides.com shared kit.",
     "keywords": [
         "react",
