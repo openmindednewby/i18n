@@ -11,5 +11,5 @@ export default defineConfig({
   minify: false,
   target: 'es2020',
   outDir: 'dist',
-  external: ['react', 'react-dom', 'react-native'],
+  external: ['react', 'react-dom', 'react-native', 'i18next', 'react-i18next'],
 });

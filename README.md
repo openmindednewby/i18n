@@ -97,6 +97,33 @@ Prefer **named** in app catalogs. Positional exists so the kit's calls keep work
 | `resolveInitialLocale`, `primarySubtag`, `isSupported` | Pure locale resolution. |
 | `readStoredLocale`, `writeStoredLocale`, `applyDocumentLocale`, `browserLanguages` | Environment adapters. |
 
+## i18next init factory
+
+For apps on i18next + react-i18next (install both; they are optional peers):
+
+```ts
+import { initI18n } from '@dloizides/i18n';
+import * as Localization from 'expo-localization';
+import en from './locales/en.json';
+
+const i18n = initI18n({
+  resources: { en: { translation: en } },
+  lng: Localization.getLocales()[0]?.languageCode ?? 'en',
+});
+export default i18n;
+```
+
+| Option | Default | Notes |
+|---|---|---|
+| `resources` | required | i18next resource bundle. |
+| `lng` | `fallbackLng` | Active language. |
+| `fallbackLng` | `'en'` | Used for missing keys. |
+| `escapeValue` | `false` | React already escapes. |
+| `defaultNS` / `ns` | i18next default | Only for multi-namespace apps. |
+
+The init rejection is swallowed (in-memory resources resolve synchronously). Moved here from
+`@dloizides/frontend-devtools` 1.x, which is now a dev-only package.
+
 ## Catalog conventions
 
 Flat, dotted keys, namespaced by screen — `cases.title`, `onboarding.step1.lead`. English is

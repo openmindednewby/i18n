@@ -5,6 +5,17 @@ All notable changes to `@dloizides/i18n` are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-10-20
+
+D-PAT-15 "Move initI18n out of frontend-devtools so it is dev-only".
+
+### Added
+
+- `initI18n(options)` + `InitI18nOptions`, moved unchanged from `@dloizides/frontend-devtools`
+  (removed there in 2.0.0): wires `react-i18next` into the i18next singleton, runs `.init()` and
+  returns the singleton. `i18next` and `react-i18next` are optional peer dependencies, needed only
+  by apps that call it.
+
 ## [1.0.0] — 2026-07-12
 
 Initial release. Extracted as the shared i18n runtime for the dloizides RN / RN-web apps, first

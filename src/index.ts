@@ -53,3 +53,6 @@ export type { I18nProviderProps, I18nValue } from './I18nProvider';
 // The switcher.
 export { LanguageSwitcher } from './LanguageSwitcher';
 export type { LanguageSwitcherColors, LanguageSwitcherProps } from './LanguageSwitcher';
+
+export { initI18n } from './initI18n';
+export type { InitI18nOptions } from './initI18n';
