@@ -56,3 +56,6 @@ export type { LanguageSwitcherColors, LanguageSwitcherProps } from './LanguageSw
 
 export { initI18n } from './initI18n';
 export type { InitI18nOptions } from './initI18n';
+
+export { createFormatMessage } from './createFormatMessage';
+export type { FormatMessage, MessageTranslator } from './createFormatMessage';

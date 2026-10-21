@@ -5,6 +5,14 @@ All notable changes to `@dloizides/i18n` are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+EXTRACT-TS-I18N-1 "Fold duplicated i18n and utils into @dloizides/i18n and @dloizides/utils".
+
+### Added
+
+- `createFormatMessage(i18n)` builds the portal `FM(id, p1, p2, p3)` helper that 8 portals carried as a local copy.
+
 ## [1.1.0] — 2026-10-20
 
 D-PAT-15 "Move initI18n out of frontend-devtools so it is dev-only".
