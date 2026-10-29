@@ -7,6 +7,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-10-29
+
 FLIER-2 "Flier Studio follow-ups" item 6 "React-free FM for vanilla apps".
 
 ### Added
