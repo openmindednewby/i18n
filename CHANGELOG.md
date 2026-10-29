@@ -7,6 +7,21 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+FLIER-2 "Flier Studio follow-ups" item 6 "React-free FM for vanilla apps".
+
+### Added
+
+- `@dloizides/i18n/core` subpath: `createFormatMessage(messages)` over a plain nested messages
+  object (`FM(key, ...params)` fills `{{p1}}`, `{{p2}}`, ...) and `interpolateDoubleBrace(template,
+  params)` for `{{name}}`. Imports no React and no i18next.
+
+### Changed
+
+- `react` and `react-native` peer dependencies are now optional, like `i18next` and
+  `react-i18next`, so a vanilla app using only `/core` installs none of them.
+
+## [1.2.0] — 2026-10-21
+
 EXTRACT-TS-I18N-1 "Fold duplicated i18n and utils into @dloizides/i18n and @dloizides/utils".
 
 ### Added

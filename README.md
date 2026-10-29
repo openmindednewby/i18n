@@ -124,6 +124,25 @@ export default i18n;
 The init rejection is swallowed (in-memory resources resolve synchronously). Moved here from
 `@dloizides/frontend-devtools` 1.x, which is now a dev-only package.
 
+## Vanilla core: `@dloizides/i18n/core`
+
+For apps with no React and no i18next (plain Vite, workers, scripts). The subpath imports nothing
+outside the package, and `react`, `react-native`, `i18next` and `react-i18next` are all optional
+peers, so installing the package for this subpath pulls none of them in.
+
+```ts
+import { createFormatMessage, interpolateDoubleBrace } from '@dloizides/i18n/core';
+import en from './en.json';
+
+export const FM = createFormatMessage(en);
+FM('upload.count', '3', '7'); // "{{p1}} of {{p2}}" -> "3 of 7"
+interpolateDoubleBrace('Hello {{name}}', { name: 'Ada' }); // "Hello Ada"
+```
+
+Dotted keys walk the nested object; a missing key (or a key that points at a branch) returns the
+key; an unfilled `{{placeholder}}` is left intact. The root entry's `createFormatMessage(i18n)` is
+unchanged.
+
 ## Catalog conventions
 
 Flat, dotted keys, namespaced by screen — `cases.title`, `onboarding.step1.lead`. English is

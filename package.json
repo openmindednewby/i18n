@@ -49,6 +49,35 @@
                 "types": "./dist/index.d.ts",
                 "default": "./dist/index.js"
             }
+        },
+        "./core": {
+            "react-native": {
+                "types": "./dist/core.d.ts",
+                "default": "./dist/core.js"
+            },
+            "browser": {
+                "types": "./dist/core.d.ts",
+                "default": "./dist/core.js"
+            },
+            "require": {
+                "types": "./dist/core.d.ts",
+                "default": "./dist/core.js"
+            },
+            "import": {
+                "types": "./dist/core.d.mts",
+                "default": "./dist/core.mjs"
+            },
+            "default": {
+                "types": "./dist/core.d.ts",
+                "default": "./dist/core.js"
+            }
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "core": [
+                "./dist/core.d.ts"
+            ]
         }
     },
     "files": [
@@ -111,6 +140,12 @@
         "typescript": "^5.4.0"
     },
     "peerDependenciesMeta": {
+        "react": {
+            "optional": true
+        },
+        "react-native": {
+            "optional": true
+        },
         "i18next": {
             "optional": true
         },
