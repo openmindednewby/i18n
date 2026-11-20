@@ -7,6 +7,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.5.0] — 2026-11-20
+
+INV-EXTRACT-1 W10, D-EXTRACT-4 "blankMissing option for createFormatMessage".
+
+### Added
+
+- `createFormatMessage(i18n, { blankMissing: true })`: an unfilled `{{p1}}`..`{{p3}}` renders as empty
+  text (the behaviour of an FM that passed `undefined` parameters). Default unchanged.
+
 ## [1.4.0] — 2026-11-20
 
 INV-EXTRACT-1 "Move generic invoice-web code to shared packages", wave W10.
