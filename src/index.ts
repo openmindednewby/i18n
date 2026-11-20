@@ -58,6 +58,6 @@ export { initI18n } from './initI18n';
 export type { InitI18nOptions } from './initI18n';
 
 export { createFormatMessage } from './createFormatMessage';
-export type { FormatMessage, MessageTranslator } from './createFormatMessage';
+export type { FormatMessage, FormatMessageOptions, MessageTranslator } from './createFormatMessage';
 export { createFormatCount } from './createFormatCount';
 export type { CountTranslator, FormatCount } from './createFormatCount';

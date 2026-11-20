@@ -1,3 +1,5 @@
+import i18next from 'i18next';
+
 import { createFormatMessage } from './createFormatMessage';
 
 function makeTranslator(): { t: jest.Mock } {
@@ -47,5 +49,34 @@ describe('createFormatMessage', () => {
     fm('menu.count', '');
 
     expect(translator.t).toHaveBeenCalledWith('menu.count', { p1: '' });
+  });
+
+  it('with blankMissing and only the second parameter, passes empty p1 and p3', () => {
+    const translator = makeTranslator();
+    const fm = createFormatMessage(translator, { blankMissing: true });
+
+    fm('menu.count', undefined, 'b');
+
+    expect(translator.t).toHaveBeenCalledWith('menu.count', { p1: '', p2: 'b', p3: '' });
+  });
+
+  it('with blankMissing on i18next and no p1, renders the unfilled {{p1}} as empty text', async () => {
+    const instance = i18next.createInstance();
+    await instance.init({ lng: 'en', resources: { en: { translation: { due: 'Issue due invoices ({{p1}})?' } } } });
+    const fm = createFormatMessage(instance, { blankMissing: true });
+
+    const result = fm('due');
+
+    expect(result).toBe('Issue due invoices ()?');
+  });
+
+  it('without blankMissing on i18next and no p1, keeps the {{p1}} placeholder', async () => {
+    const instance = i18next.createInstance();
+    await instance.init({ lng: 'en', resources: { en: { translation: { due: 'Issue due invoices ({{p1}})?' } } } });
+    const fm = createFormatMessage(instance);
+
+    const result = fm('due');
+
+    expect(result).toBe('Issue due invoices ({{p1}})?');
   });
 });
