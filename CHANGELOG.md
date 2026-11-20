@@ -7,6 +7,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-11-20
+
+INV-EXTRACT-1 "Move generic invoice-web code to shared packages", wave W10.
+
+### Added
+
+- `createFormatCount(translator)`: builds the portal `FMCount(id, count)` helper, which picks the
+  key's `_one` / `_other` form and fills `{{p1}}` with the count (from jinx-bead-patterns).
+
 ## [1.3.0] — 2026-10-29
 
 FLIER-2 "Flier Studio follow-ups" item 6 "React-free FM for vanilla apps".
